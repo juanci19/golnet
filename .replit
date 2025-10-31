@@ -12,15 +12,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "webserver"
+args = "Web Server"
 
 [[workflows.workflow]]
-name = "webserver"
+name = "Web Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000"
+args = "python -m http.server 5000"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -29,3 +29,7 @@ outputType = "webview"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 45353
+externalPort = 3000
